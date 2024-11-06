@@ -1,0 +1,34 @@
+{% extends 'pages/layout.html.twig' %}
+
+{% block main %}
+	<h1 class='title'>Connexion</h1>
+
+	{% if app.request.query.get('succes')%}
+		<p class='succesMsg'>Votre compte a bien été créer merci de vous reconnecter</p>
+	{% endif %}
+
+<div class='form'>
+	{{ form_start(ConnectForm) }}
+
+	<div class='container'>
+		<p class='inputDescription'>Email :</p>
+		{{ form_widget(ConnectForm.email, {'full_name':'email', 'value': last_email, 'attr': {'class': 'input'}}) }}
+		{{ form_errors(ConnectForm.email) }}
+	</div>
+
+	<div class='container'>
+		<p class='inputDescription'>Mot de passe :</p>
+		{{ form_widget(ConnectForm.password, {'full_name':'password', 'attr': {'class': 'input'}}) }}
+		{{ form_errors(ConnectForm.password) }}
+	</div>
+</div>
+
+
+	{{ form_widget(ConnectForm.submit, {attr: {class: 'button'}}) }}
+	{{ form_end(ConnectForm) }}
+
+	{% if error %}
+		<div class='errMsg'>Identifiants incorrects</div>
+	{% endif %}
+
+{% endblock %}

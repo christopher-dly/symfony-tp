@@ -4,11 +4,14 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="styles/app.css">
-        <title>Document</title>
+		<title>Document</title>
+	
+
+		{% block javascripts %}{% endblock %}
 	</head>
 	<body>
-		<header>
-        {% include "components/navbar.html.twig" %}
+		<header class='navbar'>
+			{% include "components/navbar.html.twig" %}
 		</header>
 
 		<main>
