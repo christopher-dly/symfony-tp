@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open';
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    background-color: rgb(0, 110, 255);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+h1{
+    margin-top: 25px;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.button{
+    background-color: orange;
+    color: white;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    margin-top: 25px;
+    border-color: orange;
+    border-radius: 10px;
+}
+
+.input{
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.inputDescription{
+    font-size: 20px;
+}
+
+.container{
+    margin-top: 25px;
+}

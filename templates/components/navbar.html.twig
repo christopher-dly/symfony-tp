@@ -1,7 +1,15 @@
 <nav>
-	<ul>
-		<li>Accueil</li>
-        <li>Connexion</li>
-        <li>Inscription</li>
-	</ul>
+	<a class='link' href={{ path('accueil') }}>Accueil</a>
+
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+		<a class='link' href={{ path('profil') }}>Profil</a>
+		<a class='link' href={{ path('deconnexion') }}>Déconnexion</a>
+
+	{% else %}
+
+		<a class='link' href={{ path('inscription') }}>Inscription</a>
+		<a class='link' href={{ path('connexion') }}>Connexion</a>
+
+	{% endif %}
 </nav>

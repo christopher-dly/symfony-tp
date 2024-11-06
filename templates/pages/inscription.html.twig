@@ -1,0 +1,39 @@
+{% extends "pages/layout.html.twig" %}
+
+{% block main %}
+	<h1 class='title'>inscription</h1>
+
+	{{ form_start(UserForm) }}
+
+	<div class='container'>
+		<p class='inputDescription'>Adresse email :</p>
+		{{ form_widget(UserForm.email, {'attr': {'class': 'input'}}) }}
+		{{ form_errors(UserForm.email) }}
+	</div>
+
+	<div class='container'>
+		<p class='inputDescription'>Pseudo :</p>
+		{{ form_widget(UserForm.pseudo, {'attr': {'class': 'input'}}) }}
+		{{ form_errors(UserForm.pseudo) }}
+	</div>
+
+<div class='container'>
+    <p class='inputDescription'>Mot de passe :</p>
+    {{ form_widget(UserForm.password.first, {'label': '', 'attr': {'placeholder': 'Entrez votre mot de passe', 'class': 'input'}}) }}
+    {{ form_errors(UserForm.password.first) }}
+</div>
+
+<div class='container'>
+    <p class='inputDescription'>Confirmez le mot de passe :</p>
+    {{ form_widget(UserForm.password.second, {'label': '', 'attr': {'placeholder': 'Confirmez votre mot de passe', 'class': 'input'}}) }}
+    {{ form_errors(UserForm.password.second) }}
+</div>
+
+	{{ form_widget(UserForm.submit, {attr: {class: 'button'}}) }}
+	{{ form_end(UserForm) }}
+
+	{% if app.request.query.get('error')%}
+		<p class='errMsg'>cette email existe deja</p>
+	{% endif %}
+
+{% endblock %}
