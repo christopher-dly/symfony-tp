@@ -1,6 +1,24 @@
 {% extends 'pages/layout.html.twig' %}
 
 {% block main %}
-	<h1 class='title'>Profil de
-		{{ app.user.pseudo}}</h1>
+	<div class='card'>
+		<div class='card-profil'>
+			<h1 class='title'>{{ app.user.pseudo}}</h1>
+			<img class='pp' src="{{app.user.avatar}}" alt="avatar de profil" width='100px' height='100px'>
+		</div>
+
+		<div class='card-description'>
+			<p class='description'>Description :
+				{{app.user.description}}</p>
+			<p class='email'>{{app.user.email}}</p>
+			<p class='emploi'>Emploi :
+				{{app.user.emploi}}</p>
+			<p class='telephone'>Numero de téléphone :
+				{{app.user.telephone}}</p>
+			<p class='siteURL'>site d'internet :
+				{{app.user.siteURL}}</p>
+			<button class='modifier button'><a href="/profil/modifier">modifier</a></button>
+		</div>
+	</div>
+
 {% endblock %}

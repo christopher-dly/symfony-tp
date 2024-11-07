@@ -1,0 +1,34 @@
+{% extends 'pages/layout.html.twig' %}
+
+{% block main %}
+	<h1 class='title'>Modifier le profil</h1>
+
+	{{ form_start(ProfilForm) }}
+	<div class='container'>
+		<p class='inputDescription'>Avatar :</p>
+		{{ form_widget(ProfilForm.avatar, {'attr': {'class': 'file'}})}}
+		{{ form_errors(ProfilForm.avatar)}}
+	</divclass=>
+    
+	<div class='container'>
+		<p class='inputDescription'>Emploi :</p>
+		{{ form_widget(ProfilForm.emploi, {'attr': {'class': 'input'}})}}
+		{{ form_errors(ProfilForm.emploi)}}
+	</divclass=>
+
+	<div class='container'>
+		<p class='inputDescription'>Pseudo :</p>
+		{{ form_widget(ProfilForm.pseudo, {'attr': {'class': 'input'}})}}
+		{{ form_errors(ProfilForm.pseudo)}}
+	</divclass=>
+
+	<div class='container'>
+		<p class='inputDescription'>Description :</p>
+		{{ form_widget(ProfilForm.description, {'attr': {'class': 'input'}})}}
+		{{ form_errors(ProfilForm.description)}}
+	</divclass=>
+
+	{{ form_widget(ProfilForm.submit, {attr: {class: 'button'}}) }}
+	{{ form_end(ProfilForm) }}
+
+{% endblock %}
