@@ -28,7 +28,6 @@ class UserController extends AbstractController
             if ($emailExist) {
                 return $this->redirectToRoute('inscription', ['error' => 'USER_EXIST']);
             };
-            $email = $user->getEmail();
 
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,
@@ -36,7 +35,6 @@ class UserController extends AbstractController
             );
             $user->setPassword($hashedPassword);
 
-            $pseudo = $user->getPseudo();
 
             $repository->sauvegarder($user, true);
 

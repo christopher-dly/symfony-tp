@@ -17,17 +17,17 @@
 		{{ form_errors(UserForm.pseudo) }}
 	</div>
 
-<div class='container'>
-    <p class='inputDescription'>Mot de passe :</p>
-    {{ form_widget(UserForm.password.first, {'label': '', 'attr': {'placeholder': 'Entrez votre mot de passe', 'class': 'input'}}) }}
-    {{ form_errors(UserForm.password.first) }}
-</div>
+	<div class='container'>
+		<p class='inputDescription'>Mot de passe :</p>
+		{{ form_widget(UserForm.password.first, {'label': '', 'attr': {'placeholder': 'Entrez votre mot de passe', 'class': 'input'}}) }}
+		{{ form_errors(UserForm.password.first) }}
+	</div>
 
-<div class='container'>
-    <p class='inputDescription'>Confirmez le mot de passe :</p>
-    {{ form_widget(UserForm.password.second, {'label': '', 'attr': {'placeholder': 'Confirmez votre mot de passe', 'class': 'input'}}) }}
-    {{ form_errors(UserForm.password.second) }}
-</div>
+	<div class='container'>
+		<p class='inputDescription'>Confirmez le mot de passe :</p>
+		{{ form_widget(UserForm.password.second, {'label': '', 'attr': {'placeholder': 'Confirmez votre mot de passe', 'class': 'input'}}) }}
+		{{ form_errors(UserForm.password.second) }}
+	</div>
 
 	{{ form_widget(UserForm.submit, {attr: {class: 'button'}}) }}
 	{{ form_end(UserForm) }}

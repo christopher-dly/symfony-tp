@@ -33,7 +33,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $description = null;
 
     #[ORM\Column(type: 'string', nullable: true)]
-    private ?string $avatar = null;
+    private ?string $avatar = 'img/download.png';
 
     #[ORM\Column(type: 'string', length: 50, nullable: true)]
     private ?string $emploi = null;
@@ -167,7 +167,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getAvatar()
     {
-        return $this->avatar;
+        return $this->avatar ?? 'img/download.png';
     }
 
     /**
